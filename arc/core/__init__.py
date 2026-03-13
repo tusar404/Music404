@@ -6,23 +6,35 @@ Copyright (c) 2025 Team Arc
 Developer: @tusar404
 """
 
-from arc.core.config import Config
-from arc.core.logging import LOGGER, log
-from arc.core.database import Database
-from arc.core.bot import Bot
-from arc.core.userbot import Userbot
-from arc.core.youtube import YouTube
-from arc.core.api import ArcAPI
-from arc.core.calls import TgCall
-from arc.core.telegram import Telegram
+# Import config first (no dependencies on other arc modules)
+from arc.core.config import Config, config
+
+# Import logging (no dependencies on other arc modules)
+from arc.core.logging import LOGGER, log, tg_log
+
+# Import queue and lang (no arc dependencies)
 from arc.core.queue import Queue
 from arc.core.lang import Language
 
+# Import database (depends on config, logging)
+from arc.core.database import Database
+
+# Import bot and userbot (depend on config, logging)
+from arc.core.bot import Bot
+from arc.core.userbot import Userbot
+
+# Import API and YouTube (depend on config, logging)
+from arc.core.api import ArcAPI
+from arc.core.youtube import YouTube
+
+# Import calls (depends on logging, uses lazy imports for buttons)
+from arc.core.calls import TgCall
+
+# Import telegram (depends on config, logging)
+from arc.core.telegram import Telegram
+
 # Initialize logger
 logger = LOGGER(__name__)
-
-# Initialize configuration
-config = Config()
 
 # Initialize database
 db = Database()
@@ -52,6 +64,7 @@ queue = Queue()
 lang = Language()
 
 __all__ = [
+    "Config",
     "config",
     "db",
     "app",
@@ -65,4 +78,5 @@ __all__ = [
     "logger",
     "LOGGER",
     "log",
+    "tg_log",
 ]
