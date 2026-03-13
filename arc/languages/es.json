@@ -1,0 +1,53 @@
+{
+  "now_playing": "<b>Reproduciendo ahora</b>\n\nTitulo: <a href='{0}'>{1}</a>\nDuracion: {2}\nSolicitado por: {3}",
+  "play_next": "<i>Reproduciendo siguiente pista...</i>",
+  "play_again": "<i>Reproduciendo de nuevo...</i>",
+  "play_added": "<b>Agregado a la cola</b>\n\nTitulo: <a href='{0}'>{1}</a>\nPosicion: {2}",
+  "play_searching": "<i>Buscando:</i> <code>{0}</code>",
+  "play_downloading": "<i>Descargando...</i>",
+  "play_no_results": "No se encontraron resultados para: <code>{0}</code>",
+
+  "queue_empty": "<b>La cola esta vacia</b>",
+  "queue_title": "<b>Cola actual</b> ({0} pistas)",
+  "queue_item": "{0}. {1} [{2}]",
+  "queue_current": ">> {0}. {1} [{2}]",
+
+  "paused": "<b>Reproduccion pausada</b>",
+  "resumed": "<b>Reproduccion reanudada</b>",
+  "skipped": "<b>Saltado</b> a la siguiente pista",
+  "stopped": "<b>Reproduccion detenida</b>\nSalio del chat de voz.",
+  "shuffled": "<b>Cola mezclada</b>",
+
+  "error_no_call": "<b>No hay chat de voz activo.</b>\n\nPor favor, inicie un chat de voz primero!",
+  "error_no_file": "<b>Archivo no encontrado.</b>\n\nContacte a {0} para soporte.",
+  "error_no_audio": "<b>No se pudo extraer audio del archivo.</b>",
+  "error_tg_server": "<b>Error del servidor de Telegram.</b>\n\nIntente mas tarde.",
+  "error_generic": "<b>Error:</b> {0}",
+  "error_not_admin": "<b>Necesita ser administrador.</b>",
+  "error_auth": "<b>No esta autorizado.</b>",
+  "error_blacklisted": "<b>Este chat/usuario esta en lista negra.</b>",
+  "error_maintenance": "<b>El bot esta en mantenimiento.</b>\n\nPor favor, intente mas tarde.",
+  "error_anonymous": "<b>Parece que es anonimo!</b>\n\nPara usar este bot:\n\n1. Haga clic en su foto de perfil\n2. Seleccione 'Mostrar perfil'\n3. Luego use el comando de nuevo",
+  "error_bot_permissions": "<b>El bot no tiene permisos!</b>\n\nEl bot necesita:\n- Gestionar chats de voz\n- Invitar usuarios\n- Eliminar mensajes",
+
+  "dl_progress": "<b>Descargando...</b>\n\n{0} / {1}\n{2}% | {3}/s | Tiempo: {4}",
+  "dl_complete": "<b>Descarga completa</b> en {0}s",
+  "dl_limit": "<b>El archivo excede 200MB.</b>",
+  "dl_error": "<b>Descarga fallida:</b> {0}",
+
+  "play_duration_limit": "<b>Duracion excede el limite.</b>\n\nMaximo: {0} minutos",
+
+  "admin_auth_added": "<b>Usuario autorizado:</b> {0}",
+  "admin_auth_removed": "<b>Usuario desautorizado:</b> {0}",
+  "admin_mode_on": "<b>Modo solo administradores activado.</b>\n\nSolo administradores pueden reproducir musica.",
+  "admin_mode_off": "<b>Modo solo administradores desactivado.</b>\n\nTodos pueden reproducir musica.",
+
+  "thumbnail_on": "<b>Miniaturas activadas.</b>",
+  "thumbnail_off": "<b>Miniaturas desactivadas.</b>",
+
+  "ping": "<b>Pong!</b>\n\nAPI: {0}ms | VC: {1}ms",
+  "lang_set": "<b>Idioma cambiado a:</b> {0}",
+
+  "start_pm": "<b>Bienvenido a {0}!</b>\n\nPuedo reproducir musica y videos en tus chats de voz.\n\n<b>Caracteristicas:</b>\n- Reproducir audio de YouTube\n- Reproducir video de YouTube\n- Soporte archivos Telegram\n- Gestion de cola\n- Soporte playlists\n\n<b>Agregame a un grupo y usa</b> <code>/play</code>!",
+  "help_text": "<b>Arc Music Bot - Comandos</b>\n\n<b>Musica:</b>\n/play [cancion] - Reproducir audio\n/vplay [video] - Reproducir video\n/pause - Pausar\n/resume - Reanudar\n/skip - Saltar\n/stop - Detener\n\n<b>Cola:</b>\n/queue - Ver cola\n/now - Reproduciendo\n/clear - Limpiar cola"
+}

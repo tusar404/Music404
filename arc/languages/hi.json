@@ -1,0 +1,55 @@
+{
+  "now_playing": "<b>Ab Chal Raha Hai</b>\n\nTitle: <a href='{0}'>{1}</a>\nDuration: {2}\nRequest kiya: {3}",
+  "play_next": "<i>Aglana gana chal raha hai...</i>",
+  "play_again": "<i>Phir se chal raha hai...</i>",
+  "play_added": "<b>Queue mein add hua</b>\n\nTitle: <a href='{0}'>{1}</a>\nPosition: {2}",
+  "play_searching": "<i>Dhoond raha hu:</i> <code>{0}</code>",
+  "play_downloading": "<i>Download ho raha hai...</i>",
+  "play_no_results": "Kuch nahi mila: <code>{0}</code>",
+
+  "queue_empty": "<b>Queue khali hai</b>",
+  "queue_title": "<b>Current Queue</b> ({0} gane)",
+  "queue_item": "{0}. {1} [{2}]",
+  "queue_current": ">> {0}. {1} [{2}]",
+
+  "paused": "<b>Ruk gaya</b>",
+  "resumed": "<b>Phir se chalu ho gaya</b>",
+  "skipped": "<b>Agla gana chalu ho gaya</b>",
+  "stopped": "<b>Band ho gaya</b>\nVoice chat se nikal gaya.",
+  "shuffled": "<b>Queue mix ho gayi</b>",
+
+  "error_no_call": "<b>Koi active voice chat nahi hai.</b>\n\nPehle voice chat start karein!",
+  "error_no_file": "<b>File nahi mili.</b>\n\nSupport ke liye {0} se contact karein.",
+  "error_no_audio": "<b>Audio extract nahi ho saka.</b>",
+  "error_tg_server": "<b>Telegram server error.</b>\n\nBaad mein try karein.",
+  "error_generic": "<b>Error:</b> {0}",
+  "error_not_admin": "<b>Aapko admin hona chahiye.</b>",
+  "error_auth": "<b>Aap authorized nahi hain.</b>",
+  "error_blacklisted": "<b>Ye chat/user blacklist mein hai.</b>",
+  "error_maintenance": "<b>Bot maintenance mein hai.</b>\n\nBaad mein try karein.",
+  "error_anonymous": "<b>Aap anonymous hain!</b>\n\nBot use karne ke liye:\n\n1. Apni profile picture par click karein\n2. 'Show Profile' select karein\n3. Phir command use karein",
+  "error_bot_permissions": "<b>Bot ko permission chahiye!</b>\n\nBot ko ye chahiye:\n- Voice Chats Manage kare\n- Users Invite kare\n- Messages Delete kare",
+
+  "dl_progress": "<b>Download ho raha hai...</b>\n\n{0} / {1}\n{2}% | {3}/s | Time: {4}",
+  "dl_complete": "<b>Download complete</b> in {0}s",
+  "dl_cancel": "<b>Download cancel</b> kiya {0} ne",
+  "dl_limit": "<b>File 200MB se badi hai.</b>",
+  "dl_active": "<i>Ye file download ho rahi hai...</i>",
+  "dl_error": "<b>Download fail:</b> {0}",
+
+  "play_duration_limit": "<b>Duration limit se zyada hai.</b>\n\nMaximum: {0} minutes",
+
+  "admin_auth_added": "<b>User authorized:</b> {0}",
+  "admin_auth_removed": "<b>User unauthorized:</b> {0}",
+  "admin_mode_on": "<b>Admin-only mode on.</b>\n\nSirf admin gaana baja sakte hain.",
+  "admin_mode_off": "<b>Admin-only mode off.</b>\n\nSab bajaa sakte hain.",
+
+  "thumbnail_on": "<b>Thumbnails on.</b>",
+  "thumbnail_off": "<b>Thumbnails off.</b>",
+
+  "ping": "<b>Pong!</b>\n\nAPI: {0}ms | VC: {1}ms",
+  "lang_set": "<b>Language set to:</b> {0}",
+
+  "start_pm": "<b>Welcome to {0}!</b>\n\nMain aapke Telegram voice chat mein music bajaa sakta hu.\n\n<b>Features:</b>\n- YouTube se audio bajao\n- YouTube se video bajao\n- Telegram media support\n- Queue management\n- Playlist support\n\n<b>Mujhe group mein add karo aur</b> <code>/play</code> <b>use karo!</b>",
+  "help_text": "<b>Arc Music Bot - Commands</b>\n\n<b>Music:</b>\n/play [song] - Audio bajao\n/vplay [video] - Video bajao\n/pause - Ruk jao\n/resume - Chalu karo\n/skip - Agla gana\n/stop - Band karo\n\n<b>Queue:</b>\n/queue - Queue dekho\n/now - Ab kya chal raha hai\n/clear - Queue khaali karo"
+}

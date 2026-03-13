@@ -1,0 +1,51 @@
+{
+  "now_playing": "<b>Sedang Diputar</b>\n\nJudul: <a href='{0}'>{1}</a>\nDurasi: {2}\nDiminta oleh: {3}",
+  "play_next": "<i>Memutar lagu berikutnya...</i>",
+  "play_again": "<i>Memutar ulang...</i>",
+  "play_added": "<b>Ditambahkan ke antrian</b>\n\nJudul: <a href='{0}'>{1}</a>\nPosisi: {2}",
+  "play_searching": "<i>Mencari:</i> <code>{0}</code>",
+  "play_downloading": "<i>Mengunduh...</i>",
+  "play_no_results": "Tidak ditemukan hasil untuk: <code>{0}</code>",
+
+  "queue_empty": "<b>Antrian kosong</b>",
+  "queue_title": "<b>Antrian Saat Ini</b> ({0} lagu)",
+  "queue_item": "{0}. {1} [{2}]",
+  "queue_current": ">> {0}. {1} [{2}]",
+
+  "paused": "<b>Dijeda</b>",
+  "resumed": "<b>Dilanjutkan</b>",
+  "skipped": "<b>Dilewati</b> ke lagu berikutnya",
+  "stopped": "<b>Dihentikan</b>\nKeluar dari obrolan suara.",
+  "shuffled": "<b>Antrian diacak</b>",
+
+  "error_no_call": "<b>Tidak ada obrolan suara aktif.</b>\n\nMulai obrolan suara terlebih dahulu!",
+  "error_no_file": "<b>File tidak ditemukan.</b>\n\nHubungi {0} untuk dukungan.",
+  "error_no_audio": "<b>Tidak dapat mengekstrak audio.</b>",
+  "error_tg_server": "<b>Kesalahan server Telegram.</b>\n\nCoba lagi nanti.",
+  "error_generic": "<b>Kesalahan:</b> {0}",
+  "error_not_admin": "<b>Anda harus menjadi admin.</b>",
+  "error_auth": "<b>Anda tidak diotorisasi.</b>",
+  "error_blacklisted": "<b>Chat/pengguna ini masuk daftar hitam.</b>",
+  "error_maintenance": "<b>Bot sedang dalam perbaikan.</b>\n\nCoba lagi nanti.",
+  "error_anonymous": "<b>Anda tampaknya anonim!</b>\n\nUntuk menggunakan bot ini:\n\n1. Klik foto profil Anda\n2. Pilih 'Tampilkan Profil'\n3. Kemudian gunakan perintah lagi",
+  "error_bot_permissions": "<b>Bot tidak memiliki izin!</b>\n\nBot membutuhkan:\n- Kelola Obrolan Suara\n- Undang Pengguna\n- Hapus Pesan",
+
+  "dl_progress": "<b>Mengunduh...</b>\n\n{0} / {1}\n{2}% | {3}/d | Waktu: {4}",
+  "dl_complete": "<b>Unduhan selesai</b> dalam {0}d",
+  "dl_limit": "<b>Ukuran file melebihi 200MB.</b>",
+  "dl_error": "<b>Unduhan gagal:</b> {0}",
+
+  "play_duration_limit": "<b>Durasi melebihi batas.</b>\n\nMaksimum: {0} menit",
+
+  "admin_mode_on": "<b>Mode admin-only diaktifkan.</b>\n\nHanya admin yang dapat memutar musik.",
+  "admin_mode_off": "<b>Mode admin-only dinonaktifkan.</b>\n\nSemua orang dapat memutar musik.",
+
+  "thumbnail_on": "<b>Thumbnail diaktifkan.</b>",
+  "thumbnail_off": "<b>Thumbnail dinonaktifkan.</b>",
+
+  "ping": "<b>Pong!</b>\n\nAPI: {0}ms | VC: {1}ms",
+  "lang_set": "<b>Bahasa diatur ke:</b> {0}",
+
+  "start_pm": "<b>Selamat datang di {0}!</b>\n\nSaya dapat memutar musik dan video di obrolan suara Telegram.\n\n<b>Fitur:</b>\n- Putar audio dari YouTube\n- Putar video dari YouTube\n- Dukungan file Telegram\n- Manajemen antrian\n- Dukungan playlist\n\n<b>Tambahkan saya ke grup dan gunakan</b> <code>/play</code>!",
+  "help_text": "<b>Arc Music Bot - Perintah</b>\n\n<b>Musik:</b>\n/play [lagu] - Putar audio\n/vplay [video] - Putar video\n/pause - Jeda\n/resume - Lanjutkan\n/skip - Lewati\n/stop - Berhenti\n\n<b>Antrian:</b>\n/queue - Lihat antrian\n/now - Sedang diputar\n/clear - Hapus antrian"
+}

@@ -1,0 +1,15 @@
+# Arc Music Bot Dependencies
+# ============================
+
+# Core Framework
+aiohttp~=3.13.3           # Async HTTP client/server
+kurigram>=2.2.17          # MTProto framework (Pyrogram fork)
+pillow~=12.1.0            # Image processing
+psutil~=7.2.1             # System monitoring
+pymongo>=4.16.0           # MongoDB async driver
+pytgcrypto>=1.2.11        # Telegram crypto acceleration
+py-tgcalls~=2.2.10        # Voice chat streaming
+py-yt-search~=0.5.7       # YouTube search
+python-dotenv~=1.2.1      # Environment variables
+yt-dlp>=2025.12.8         # YouTube download
+aiofiles>=24.1.0          # Async file operations
