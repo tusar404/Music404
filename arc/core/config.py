@@ -32,7 +32,7 @@ class Config:
         # MongoDB
         self.MONGO_URL: str = os.getenv("MONGO_URL", "")
         self.DB_NAME: str = os.getenv("DB_NAME", "ArcMusic")
-        self.DB_URI: str = os.getenv("DB_URI", "")
+        self.DB_URI: str = os.getenv("DB_URI", "")  # Secondary database for media
 
         # Owner & Logger
         self.OWNER_ID: int = int(os.getenv("OWNER_ID", "0"))
@@ -46,7 +46,8 @@ class Config:
         self.MEDIA_CHANNEL_ID: str = os.getenv("MEDIA_CHANNEL_ID", "")
 
         # Bot Settings
-        self.DURATION_LIMIT: int = int(os.getenv("DURATION_LIMIT", "5400"))
+        self.DURATION_LIMIT: int = int(os.getenv("DURATION_LIMIT", "5400"))  # 90 minutes
+        self.QUEUE_LIMIT: int = int(os.getenv("QUEUE_LIMIT", "50"))  # Max tracks in queue
         self.LANG_CODE: str = os.getenv("LANG_CODE", "en")
 
         # Support Info
@@ -100,11 +101,19 @@ class Config:
 
     @property
     def session_strings(self) -> list:
+        """Get list of session strings."""
         return [s for s in [self.STRING1, self.STRING2, self.STRING3, self.STRING4, self.STRING5] if s]
 
     @property
     def assistant_count(self) -> int:
+        """Get number of assistants."""
         return len(self.session_strings)
 
     def set_maintenance(self, status: bool):
+        """Set maintenance mode status."""
         self.MAINTENANCE_MODE = status
+
+
+# Create config instance at module level
+# This allows other modules to import config directly
+config = Config()
