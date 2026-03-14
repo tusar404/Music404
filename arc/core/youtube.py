@@ -19,7 +19,17 @@ from py_yt import Playlist, VideosSearch
 
 from arc.core.config import config
 from arc.core.logging import LOGGER
-from arc.helpers.utils import to_seconds
+
+
+# Timeouts
+SEARCH_TIMEOUT = 10  # 10 seconds for YouTube search
+DOWNLOAD_TIMEOUT = 80  # 80 seconds for downloads
+
+
+def _get_to_seconds():
+    """Lazy import to_seconds to avoid circular imports."""
+    from arc.helpers.utils import to_seconds
+    return to_seconds
 
 
 class YouTube:
@@ -41,10 +51,6 @@ class YouTube:
             r"(youtube\.com/(watch\?v=|shorts/|playlist\?list=)|youtu\.be/)"
             r"([A-Za-z0-9_-]{11}|PL[A-Za-z0-9_-]+)([&?][^\s]*)?"
         )
-
-        # Import API handler
-        from arc.core.api import ArcAPI
-        self.api = ArcAPI()
 
     def get_cookie_file(self) -> Optional[str]:
         """
@@ -144,7 +150,7 @@ class YouTube:
         video: bool = False
     ) -> Optional[dict]:
         """
-        Search for a video on YouTube.
+        Search for a video on YouTube with timeout.
 
         Args:
             query: Search query
@@ -154,9 +160,15 @@ class YouTube:
         Returns:
             Track dict or None
         """
+        to_seconds = _get_to_seconds()
+        
         try:
+            # Use asyncio.wait_for for timeout
             search = VideosSearch(query, limit=1, with_live=False)
-            results = await search.next()
+            results = await asyncio.wait_for(
+                search.next(),
+                timeout=SEARCH_TIMEOUT
+            )
 
             if results and results.get("result"):
                 data = results["result"][0]
@@ -174,6 +186,8 @@ class YouTube:
                     "video": video,
                 }
 
+        except asyncio.TimeoutError:
+            LOGGER(__name__).warning(f"YouTube search timed out for: {query}")
         except Exception as ex:
             LOGGER(__name__).error(f"YouTube search failed: {ex}")
 
@@ -198,6 +212,7 @@ class YouTube:
         Returns:
             List of track dicts
         """
+        to_seconds = _get_to_seconds()
         tracks = []
 
         try:
@@ -232,9 +247,7 @@ class YouTube:
     ) -> Optional[str]:
         """
         Download a YouTube video/audio.
-
-        Audio downloads use the external API for faster processing.
-        Video downloads use local yt-dlp.
+        Uses external API for faster downloads if configured.
 
         Args:
             video_id: YouTube video ID
@@ -249,7 +262,9 @@ class YouTube:
 
         # Route audio to external API if configured
         if not video and config.API_URL and config.API_KEY:
-            file_path = await self.api.download_track(url, video=False)
+            from arc.core.api import ArcAPI
+            api = ArcAPI()
+            file_path = await api.download_track(url, video=False)
             if file_path:
                 return file_path
 
