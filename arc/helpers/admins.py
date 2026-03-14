@@ -1,6 +1,7 @@
 """
 Admin Helpers for Arc Music Bot
 Handles admin permission checks
+Uses lazy imports to avoid circular dependencies
 
 Copyright (c) 2025 Team Arc
 Developer: @tusar404
@@ -10,11 +11,16 @@ from pyrogram.enums import ChatMemberStatus
 from pyrogram.errors import UserNotParticipant, ChannelPrivate
 from typing import Optional
 
-from arc.core import app
+
+def _get_app():
+    """Lazy import app to avoid circular imports."""
+    from arc.core import app
+    return app
 
 
 async def is_admin(chat_id: int, user_id: int) -> bool:
     """Check if user is admin in chat."""
+    app = _get_app()
     try:
         member = await app.get_chat_member(chat_id, user_id)
         return member.status in [
@@ -29,6 +35,7 @@ async def is_admin(chat_id: int, user_id: int) -> bool:
 
 async def get_admins(chat_id: int) -> list:
     """Get list of admin user IDs in chat."""
+    app = _get_app()
     admins = []
     try:
         async for member in app.get_chat_members(chat_id, filter=ChatMemberStatus.ADMINISTRATOR):
@@ -50,6 +57,7 @@ async def reload_admins(chat_id: int) -> list:
 
 async def bot_can_manage_voice_chats(chat_id: int) -> bool:
     """Check if bot can manage voice chats."""
+    app = _get_app()
     try:
         member = await app.get_chat_member(chat_id, app.id)
         return member.privileges and member.privileges.can_manage_video_chats
@@ -59,6 +67,7 @@ async def bot_can_manage_voice_chats(chat_id: int) -> bool:
 
 async def bot_can_invite_users(chat_id: int) -> bool:
     """Check if bot can invite users."""
+    app = _get_app()
     try:
         member = await app.get_chat_member(chat_id, app.id)
         return member.privileges and member.privileges.can_invite_users
@@ -68,6 +77,7 @@ async def bot_can_invite_users(chat_id: int) -> bool:
 
 async def bot_can_delete_messages(chat_id: int) -> bool:
     """Check if bot can delete messages."""
+    app = _get_app()
     try:
         member = await app.get_chat_member(chat_id, app.id)
         return member.privileges and member.privileges.can_delete_messages
@@ -77,6 +87,7 @@ async def bot_can_delete_messages(chat_id: int) -> bool:
 
 async def get_bot_permissions(chat_id: int) -> dict:
     """Get all bot permissions in chat."""
+    app = _get_app()
     permissions = {
         "can_manage_voice_chats": False,
         "can_invite_users": False,
